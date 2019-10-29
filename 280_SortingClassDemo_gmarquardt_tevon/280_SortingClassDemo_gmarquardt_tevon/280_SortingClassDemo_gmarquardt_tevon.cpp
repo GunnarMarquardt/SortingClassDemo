@@ -125,10 +125,14 @@ void Sorter::shellSort() {
 }
 
 void Sorter::quickSort() {
+	//pre: none
+	//post: the workspace array is sorted in ascending order
 	quickSort(0, MAX_STRINGS - 1);
 }
 
 void Sorter::quickSort(int start, int stop) {
+	//pre: none
+	//post: the workspace array from start to stop is sorted in ascending order
 	if (start == stop) {
 		return;
 	}
@@ -269,7 +273,7 @@ int main() {
 				cout << endl;
 			}
 
-			//test selecion sort
+			//test shell sort
 			start = clock();
 			s4.shellSort();
 			stop = clock();
@@ -294,7 +298,7 @@ int main() {
 				cout << endl;
 			}
 
-			//test selecion sort
+			//test quick sort
 			start = clock();
 			s5.quickSort();
 			stop = clock();
@@ -314,16 +318,11 @@ int main() {
 			cout << "Program TERMINATED" << endl;
 			exit(0);
 			break;
+		default:
+			cout << "invalid input" << endl;
+			cr(2);
+			break;
 		}
 	}
-
-	//test selection sort
-
-	//test insertion sort
-
-	//test shell sort
-
-	//test quick sort
-
 	return 0;
 }
